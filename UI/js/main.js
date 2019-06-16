@@ -4,24 +4,20 @@ $(document).ready(() => {
     setUserDropdownListener();
     setMenuClickListener();
     setSidenavCloseListener();
+    signUpListeners()
+    signInListeners()
+    
 
-    const signUpButton = document.getElementById('signUp');
-const signInButton = document.getElementById('signIn');
-const container = document.getElementById('container');
 
-signUpButton.addEventListener('click', () => {
-container.classList.add("right-panel-active");
-});
-
-signInButton.addEventListener('click', () => {
-container.classList.remove("right-panel-active");
-});
   });
 
   const sidenavEl = $('.sidenav');
 const containerEl = $('.container');
 const SIDENAV_ACTIVE_CLASS = 'sidenav-active';
 const GRID_NO_SCROLL_CLASS = 'grid-noscroll';
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
 
 function toggleClass(el, className) {
     if (el.hasClass(className)) {
@@ -93,4 +89,19 @@ function setSidenavListeners() {
       });
     });
   }
+  function signUpListeners(){
+    signUpButton.addEventListener('click', () => {
+container.classList.add("right-panel-active");
+});
+  }
+
+  function signInListener(){
+signInButton.addEventListener('click', () => {
+container.classList.remove("right-panel-active");
+});
+  }
+
+  
+
+
   
