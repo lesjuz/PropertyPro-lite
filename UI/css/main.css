@@ -328,7 +328,13 @@ a{
 
   }
 
-
+.main form{
+  background-color: #EAEDF1;
+  color: #394263;
+  margin-top: -20px;
+  padding: 20px;
+ 
+}
 .property-form {
   max-width: 800px;
   margin: 0 auto;
