@@ -3,7 +3,6 @@ $(document).ready(() => {
 const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
 const container = document.getElementById('container');
-const login = document.getElementById('login');
 
 
     addResizeListeners();
@@ -20,9 +19,7 @@ const login = document.getElementById('login');
       container.classList.remove("right-panel-active");
       });
       
-      login.addEventListener('click', () => {
-        window.location.href = 'UI/html/properties.html';
-        });
+     
     
   });
 
