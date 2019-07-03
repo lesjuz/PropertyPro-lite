@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "mocha --require babel-register",
+    "test": "mocha --require babel-register server/tests/*.js --exit",
     "start": "babel-node app.js",
     "dev": "nodemon --exec babel-node  app.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
