@@ -5,9 +5,10 @@
   "main": "app.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "mocha --require babel-register src/tests/*.js --exit",
+    "test": "mocha --require babel-register tests/*.js --exit",
     "start": "babel-node app.js",
-    "dev": "nodemon --exec babel-node  app.js"
+    "dev": "nodemon --exec babel-node  app.js",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -39,10 +40,13 @@
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "babel-watch": "^7.0.0",
+    "coveralls": "^3.0.4",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.18.0",
     "fs": "0.0.1-security",
-    "mocha": "^6.1.4"
+    "mocha": "^6.1.4",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nyc": "^14.1.1"
   }
 }

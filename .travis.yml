@@ -1,6 +1,11 @@
+env:
+  global:
+    - NODE_ENV=test
 language: node_js
-node_js: 
-  - "stable"
-cache:
-  directories:
-    - "node_modules"
+node_js:
+  - node
+script: npm run test
+after_success:
+  - npm run coveralls
+notifications:
+  email: false
