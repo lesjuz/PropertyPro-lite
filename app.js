@@ -1,7 +1,9 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import swaggerUi from 'swagger-ui-express';
 import Property from './server/routers/property';
 import User from './server/routers/user';
+import swaggerDocument from './server/helpers/swagger.json';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -27,6 +29,7 @@ app.listen(port, () => {
 
 app.use('/api/v1/properties', Property);
 app.use('/api/v1/auth', User);
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // app.get('*', function(req, res) {
 //   res.sendFile(path.join(__dirname + '/app/index.html'));
