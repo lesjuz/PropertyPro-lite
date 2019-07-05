@@ -10,6 +10,12 @@ const User = {
     if (error) {
       return res.status(401).json({ error: error.details[0].message });
     }
+    const emailExist = UserModel.findOne(req.body.email);
+    if (emailExist) {
+      return res.status(401).json({
+        error: 'Email already exist!',
+      });
+    }
     const user = UserModel.signUp(req.body);
     return res.status(201).send(user);
   },

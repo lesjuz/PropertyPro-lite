@@ -22,6 +22,23 @@ describe('User should be able to create an account ', () => {
         done(err);
       });
   });
+  it('Should return error if email has been already  assigned to an account', (done) => {
+    chai
+      .request(app)
+      .post('/api/v1/auth/signup')
+      .send({
+        first_name: 'test2',
+        last_name: 'tester2',
+        phone: '0785560012',
+        address: 'new york',
+        email: 'tester@gmail.com',
+        password: 'hello00',
+      })
+      .end((err, res) => {
+        res.should.have.status(401);
+        done(err);
+      });
+  });
   it('Should login a user', (done) => {
     chai
       .request(app)
